@@ -1,0 +1,11 @@
+<div>
+  <div>
+    <app-todo-item
+      *ngFor="let todo of todosList"
+      [todo]="todo"
+      [onDone]="handleDoneTodo"
+      [onDelete]="handleDeleteTodo"
+      [onUndo]="handleUndoTodo"
+    ></app-todo-item>
+  </div>
+</div>

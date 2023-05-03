@@ -1,0 +1,20 @@
+<div class="todo-item">
+  <span class="{{ todo.isDone ? 'todo-name todo-name--done' : 'todo-name' }}">{{
+    todo.name
+  }}</span>
+  <button
+    *ngIf="!todo.isDone; else elseDoneBtn"
+    class="done-btn"
+    (click)="onDone(todo.id)"
+  >
+    <fa-icon icon="check" />
+  </button>
+  <ng-template #elseDoneBtn>
+    <button (click)="onUndo(todo.id)">
+      <fa-icon icon="rotate-left" />
+    </button>
+  </ng-template>
+  <button class="delete-btn" (click)="onDelete(todo.id)">
+    <fa-icon icon="trash" />
+  </button>
+</div>

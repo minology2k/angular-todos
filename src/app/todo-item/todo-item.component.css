@@ -1,0 +1,55 @@
+.todo-item {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  padding: 4px 8px;
+  margin-bottom: 20px;
+}
+
+.todo-name {
+  color: #fff;
+  background-color: #2b2d42;
+  display: inline-block;
+  padding: 8px 20px;
+  width: 250px;
+  max-width: 250px;
+  border-radius: 4px;
+  font-size: 15px;
+  font-weight: 500;
+  letter-spacing: 1px;
+}
+
+.todo-name--done {
+  text-decoration: line-through;
+  opacity: 0.6;
+}
+
+button {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  padding: 4px;
+  overflow: hidden;
+  cursor: pointer;
+  background: #2b2d42;
+  border: none;
+  color: #fff;
+  transition: all linear 0.2s;
+}
+
+button > .ng-fa-icon {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 24px;
+  height: 24px;
+}
+
+button:hover {
+  background: #fff3b0;
+}
+
+button:hover > .ng-fa-icon {
+  color: #000;
+}
