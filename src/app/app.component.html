@@ -1,5 +1,7 @@
 <div>
   <h1>Minology's Todo List</h1>
-  <app-todos-form></app-todos-form>
-  <app-todos-list [todosList]="todosList"></app-todos-list>
+  <app-todos-form [todosList]="todosList"></app-todos-form>
+  <app-todos-list [todosList]="todosList">
+    <div>Todo List Footer</div>
+  </app-todos-list>
 </div>

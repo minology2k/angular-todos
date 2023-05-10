@@ -1,11 +1,12 @@
-<div>
+<div class="todo-list">
   <div>
     <app-todo-item
       *ngFor="let todo of todosList"
-      [todo]="todo"
-      [onDone]="handleDoneTodo"
-      [onDelete]="handleDeleteTodo"
-      [onUndo]="handleUndoTodo"
+      [todoItem]="todo"
+      (onDone)="handleToggleTodo($event)"
+      (onDelete)="handleDeleteTodo($event)"
+      (onUndo)="handleToggleTodo($event)"
     ></app-todo-item>
+    <ng-content></ng-content>
   </div>
 </div>

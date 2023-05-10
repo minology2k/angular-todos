@@ -5,16 +5,16 @@
   <button
     *ngIf="!todo.isDone; else elseDoneBtn"
     class="done-btn"
-    (click)="onDone(todo.id)"
+    (click)="onDoneTodo()"
   >
     <fa-icon icon="check" />
   </button>
   <ng-template #elseDoneBtn>
-    <button (click)="onUndo(todo.id)">
+    <button (click)="onUndoTodo()">
       <fa-icon icon="rotate-left" />
     </button>
   </ng-template>
-  <button class="delete-btn" (click)="onDelete(todo.id)">
+  <button class="delete-btn" (click)="onDeleteTodo()">
     <fa-icon icon="trash" />
   </button>
 </div>

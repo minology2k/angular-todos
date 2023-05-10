@@ -1,8 +1,30 @@
-<div>
-  <form>
-    <div class="input-container">
-      <input type="text" />
+<form class="todo-form">
+  <!-- <div class="todo-input">
+    <input type="text" #todoInputLocalRef />
+    <button
+      type="submit"
+      (click)="onAddTodoByLocalRef($event, todoInputLocalRef)"
+    >
       <fa-icon icon="plus" />
-    </div>
-  </form>
-</div>
+    </button>
+  </div> -->
+  <!-- <div class="todo-input">
+    <input type="text" #todoInputLocalRefViewChild />
+    <button type="submit" (click)="onAddTodoByLocalRefViewChild($event)">
+      <fa-icon icon="plus" />
+    </button>
+  </div> -->
+  <div class="todo-input">
+    <input name="todoInputNgModel" type="text" [(ngModel)]="todoInputNgModel" />
+    <button type="submit" (click)="onAddTodoByNgModel($event)">
+      <fa-icon icon="plus" />
+    </button>
+  </div>
+  <div class="todo-filter">
+    <select name="" id="">
+      <option *ngFor="let filter of todosFilter" value="filter">
+        {{ filter.type }}
+      </option>
+    </select>
+  </div>
+</form>
