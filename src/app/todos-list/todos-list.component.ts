@@ -4,7 +4,9 @@ import {
   AfterViewChecked,
   AfterViewInit,
   Component,
+  ContentChild,
   DoCheck,
+  ElementRef,
   Input,
   OnChanges,
   OnDestroy,
@@ -32,6 +34,7 @@ export class TodosListComponent
     OnDestroy
 {
   @Input() todosList: TodoItem[] = [];
+  @ContentChild('footer', { static: true }) footerDiv: ElementRef | undefined;
 
   constructor() {
     console.log('constructor called');
@@ -51,6 +54,7 @@ export class TodosListComponent
 
   ngAfterContentInit() {
     console.log('ngAfterContentInit called');
+    console.log('footer', this.footerDiv);
   }
 
   ngAfterContentChecked() {

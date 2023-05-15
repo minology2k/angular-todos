@@ -16,6 +16,8 @@ import {
   faCheck,
 } from '@fortawesome/free-solid-svg-icons';
 import { FormsModule } from '@angular/forms';
+import { BasicHighlightDirective } from './basic-highlight/basic-highlight.directive';
+import { BetterHighlightDirective } from './better-highlight/better-highlight.directive';
 
 @NgModule({
   declarations: [
@@ -23,6 +25,8 @@ import { FormsModule } from '@angular/forms';
     TodosFormComponent,
     TodosListComponent,
     TodoItemComponent,
+    BasicHighlightDirective,
+    BetterHighlightDirective,
   ],
   imports: [BrowserModule, AppRoutingModule, FontAwesomeModule, FormsModule],
   providers: [],

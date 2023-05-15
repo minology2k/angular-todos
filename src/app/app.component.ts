@@ -1,4 +1,10 @@
-import { Component } from '@angular/core';
+import {
+  AfterContentInit,
+  Component,
+  ElementRef,
+  OnInit,
+  ViewChild,
+} from '@angular/core';
 import { TodoItem } from './todo-item/todo-item.model';
 
 @Component({
@@ -6,7 +12,11 @@ import { TodoItem } from './todo-item/todo-item.model';
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css'],
 })
-export class AppComponent {
+export class AppComponent implements OnInit, AfterContentInit {
+  @ViewChild('footer', { static: false }) footerDivInApp:
+    | ElementRef
+    | undefined;
+
   title = 'angular-todos';
   todosList: TodoItem[] = [
     {
@@ -25,4 +35,9 @@ export class AppComponent {
       isDone: false,
     },
   ];
+
+  ngOnInit(): void {}
+  ngAfterContentInit(): void {
+    console.log('footer in App', this.footerDivInApp);
+  }
 }

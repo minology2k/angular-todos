@@ -12,7 +12,7 @@ export class TodosFormComponent {
 
   todoInputNgModel = '';
   todoInputLocalRef = ''; // access only through method call
-  @ViewChild('todoInputLocalRefViewChild', { static: true })
+  @ViewChild('todoInputLocalRefViewChild', { static: false })
   todoInputLocalRefViewChild: ElementRef | undefined; // can access before method call
 
   todosFilter = [

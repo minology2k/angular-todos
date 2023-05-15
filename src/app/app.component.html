@@ -2,6 +2,8 @@
   <h1>Minology's Todo List</h1>
   <app-todos-form [todosList]="todosList"></app-todos-form>
   <app-todos-list [todosList]="todosList">
-    <div>Todo List Footer</div>
+    <div #footer appBasicHighlight appBetterHighlight>Todo List Footer</div>
+    <!-- Can get #footer in app by viewChild -->
+    <!-- Can get #footer in todos-list by contentChild -->
   </app-todos-list>
 </div>
