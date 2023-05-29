@@ -18,6 +18,7 @@ import {
 import { FormsModule } from '@angular/forms';
 import { BasicHighlightDirective } from './basic-highlight/basic-highlight.directive';
 import { BetterHighlightDirective } from './better-highlight/better-highlight.directive';
+import { DropdownDirective } from './shared/dropdown-directive/dropdown.directive';
 
 @NgModule({
   declarations: [
@@ -27,6 +28,7 @@ import { BetterHighlightDirective } from './better-highlight/better-highlight.di
     TodoItemComponent,
     BasicHighlightDirective,
     BetterHighlightDirective,
+    DropdownDirective,
   ],
   imports: [BrowserModule, AppRoutingModule, FontAwesomeModule, FormsModule],
   providers: [],

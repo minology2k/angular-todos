@@ -35,6 +35,7 @@ export class AppComponent implements OnInit, AfterContentInit {
       isDone: false,
     },
   ];
+  switchCaseValue = 1;
 
   ngOnInit(): void {}
   ngAfterContentInit(): void {

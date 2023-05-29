@@ -21,10 +21,16 @@
     </button>
   </div>
   <div class="todo-filter">
-    <select name="" id="">
+    <div class="todo-filter__dropdown" appDropdown>
+      <div>Dropdown</div>
+      <ul class="dropdown-menu">
+        <li *ngFor="let filter of todosFilter">{{ filter.type }}</li>
+      </ul>
+    </div>
+    <!-- <select name="" id="">
       <option *ngFor="let filter of todosFilter" value="filter">
         {{ filter.type }}
       </option>
-    </select>
+    </select> -->
   </div>
 </form>

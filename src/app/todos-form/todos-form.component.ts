@@ -1,4 +1,5 @@
 import { Component, ElementRef, Input, ViewChild } from '@angular/core';
+import { LoggingService } from '../services/logging.service';
 import { TodoItem } from '../todo-item/todo-item.model';
 import { FilterType } from './enums';
 
@@ -6,6 +7,7 @@ import { FilterType } from './enums';
   selector: 'app-todos-form',
   templateUrl: './todos-form.component.html',
   styleUrls: ['./todos-form.component.css'],
+  providers: [LoggingService],
 })
 export class TodosFormComponent {
   @Input() todosList: TodoItem[] = [];
@@ -22,6 +24,10 @@ export class TodosFormComponent {
   ];
   currentFilter = {};
 
+  constructor(private loggingService: LoggingService) {
+    console.log('loggingService', loggingService);
+  }
+
   onAddTodoByNgModel = (e: Event) => {
     e.preventDefault();
     const randomId = Math.random() * 100;
@@ -35,6 +41,7 @@ export class TodosFormComponent {
         isDone: false,
       };
       this.todosList.push(newTodo);
+      this.loggingService.logNewTodo(newTodo.name);
     } else alert('Todo Existed');
   };
 
@@ -51,6 +58,7 @@ export class TodosFormComponent {
         isDone: false,
       };
       this.todosList.push(newTodo);
+      this.loggingService.logNewTodo(newTodo.name);
     } else alert('Todo Existed');
   };
 
@@ -69,6 +77,7 @@ export class TodosFormComponent {
         isDone: false,
       };
       this.todosList.push(newTodo);
+      this.loggingService.logNewTodo(newTodo.name);
     } else alert('Todo Existed');
   };
 }

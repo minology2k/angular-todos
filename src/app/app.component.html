@@ -2,8 +2,24 @@
   <h1>Minology's Todo List</h1>
   <app-todos-form [todosList]="todosList"></app-todos-form>
   <app-todos-list [todosList]="todosList">
-    <div #footer appBasicHighlight appBetterHighlight>Todo List Footer</div>
+    <div #footer appBasicHighlight>Todo List Footer With Basic Directive</div>
+    <div
+      #footer
+      appBetterHighlight
+      [defaultColor]="'yellow'"
+      [highlightColor]="'pink'"
+    >
+      Todo List Footer With Better Highlight Directive
+    </div>
     <!-- Can get #footer in app by viewChild -->
     <!-- Can get #footer in todos-list by contentChild -->
+
+    <div [ngSwitch]="switchCaseValue">
+      <div *ngSwitchCase="0">A</div>
+      <div *ngSwitchCase="1">B</div>
+      <div *ngSwitchCase="2">C</div>
+      <div *ngSwitchCase="3">D</div>
+      <div *ngSwitchDefault="4">E</div>
+    </div>
   </app-todos-list>
 </div>
